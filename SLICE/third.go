@@ -8,14 +8,10 @@ package main
 import "fmt"
 
 func delete(ent *[]int, i int) {
-	if i < 0 || i >= len(*ent) {
-		fmt.Printf("ent[%d] is nil\n", i)
-		return
-	}
 	*ent = append((*ent)[:i], (*ent)[i+1:]...)
 }
 func main() {
 	ent := []int{10, 20, 30, 40}
-	delete(&ent, 4)
+	delete(&ent, 1)
 	fmt.Println(ent)
 }
